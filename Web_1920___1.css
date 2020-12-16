@@ -1,0 +1,239 @@
+.mediaViewInfo {
+	--web-view-name: Web 1920 – 1;
+	--web-view-id: Web_1920__1;
+	--web-scale-on-resize: true;
+	--web-enable-deep-linking: true;
+}
+:root {
+	--web-view-ids: Web_1920__1;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	border: none;
+}
+#Web_1920__1 {
+	position: absolute;
+	width: 1920px;
+	height: 3793px;
+	background-color: rgba(255,255,255,1);
+	overflow: hidden;
+	--web-view-name: Web 1920 – 1;
+	--web-view-id: Web_1920__1;
+	--web-scale-on-resize: true;
+	--web-enable-deep-linking: true;
+}
+#Component_1__2 {
+	position: absolute;
+	width: 1920px;
+	height: 1269px;
+	left: 0px;
+	top: 1344px;
+	overflow: visible;
+}
+#Rectangle_1 {
+	fill: rgba(186,186,186,1);
+	stroke: rgba(112,112,112,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Rectangle_1 {
+	position: absolute;
+	overflow: visible;
+	width: 1920px;
+	height: 1269px;
+	left: 0px;
+	top: 0px;
+}
+#Input {
+	left: 909px;
+	top: 1447px;
+	position: absolute;
+	overflow: visible;
+	width: 104px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 45px;
+	color: rgba(255,255,255,1);
+}
+#Output {
+	left: 891px;
+	top: 2723px;
+	position: absolute;
+	overflow: visible;
+	width: 140px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 45px;
+	color: rgba(0,0,0,1);
+}
+#Component_2__1 {
+	position: absolute;
+	width: 1920px;
+	height: 54px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+#Component_1__1 {
+	position: absolute;
+	width: 1920px;
+	height: 54px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+#Rectangle_1_m {
+	fill: rgba(186,186,186,1);
+}
+.Rectangle_1_m {
+	position: absolute;
+	overflow: visible;
+	width: 1920px;
+	height: 54px;
+	left: 0px;
+	top: 0px;
+}
+#Button {
+	position: absolute;
+	width: 96px;
+	height: 34px;
+	left: 1683px;
+	top: 0px;
+	overflow: visible;
+}
+#METADATA {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: hidden;
+	width: 11px;
+	height: 10px;
+	text-align: left;
+	font-family: Arial;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 3px;
+}
+#Label {
+	left: 48px;
+	top: 18px;
+	position: absolute;
+	overflow: visible;
+	width: 49px;
+	white-space: nowrap;
+	text-align: center;
+	font-family: Noto Sans;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 16px;
+	color: rgba(252,252,252,1);
+}
+#Button_q {
+	position: absolute;
+	width: 90px;
+	height: 34px;
+	left: 1439px;
+	top: 0px;
+	overflow: visible;
+}
+#METADATA_r {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: hidden;
+	width: 11px;
+	height: 10px;
+	text-align: left;
+	font-family: Arial;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 3px;
+}
+#Label_s {
+	left: 54px;
+	top: 18px;
+	position: absolute;
+	overflow: visible;
+	width: 37px;
+	white-space: nowrap;
+	text-align: center;
+	font-family: Noto Sans;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 16px;
+	color: rgba(252,252,252,1);
+}
+#Button_t {
+	position: absolute;
+	width: 98px;
+	height: 34px;
+	left: 327px;
+	top: 0px;
+	overflow: visible;
+}
+#METADATA_u {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: hidden;
+	width: 11px;
+	height: 10px;
+	text-align: left;
+	font-family: Arial;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 3px;
+}
+#Label_v {
+	left: 46px;
+	top: 18px;
+	position: absolute;
+	overflow: visible;
+	width: 53px;
+	white-space: nowrap;
+	text-align: center;
+	font-family: Noto Sans;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 16px;
+	color: rgba(252,252,252,1);
+}
+#Output_w {
+	left: 891px;
+	top: 2587px;
+	position: absolute;
+	overflow: visible;
+	width: 140px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 45px;
+	color: rgba(255,255,255,0);
+}
+#Contact {
+	left: 909px;
+	top: 183px;
+	position: absolute;
+	overflow: visible;
+	width: 161px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 45px;
+	color: rgba(0,0,0,0);
+}

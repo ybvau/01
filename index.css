@@ -1,0 +1,214 @@
+.mediaViewInfo {
+	--web-view-name: index;
+	--web-view-id: id01;
+	--web-scale-to-fit: true;
+	--web-scale-to-fit-type: width;
+	--web-show-by-media-query: true;
+	--web-enable-deep-linking: true;
+}
+:root {
+	--web-view-ids: id01;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	border: none;
+}
+#id01 {
+	position: absolute;
+	width: 1920px;
+	height: 3557px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	--web-view-name: index;
+	--web-view-id: id01;
+	--web-scale-to-fit: true;
+	--web-scale-to-fit-type: width;
+	--web-show-by-media-query: true;
+	--web-enable-deep-linking: true;
+	cursor: auto;
+}
+#screen {
+	position: absolute;
+	width: 1920px;
+	height: 3557px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+#Slides {
+	position: absolute;
+	width: 1920px;
+	height: 2465px;
+	left: 0px;
+	top: 1092px;
+	overflow: visible;
+}
+#output {
+	mix-blend-mode: normal;
+	position: absolute;
+	width: 1790px;
+	height: 1083px;
+	left: 65px;
+	top: 1382px;
+	overflow: hidden;
+}
+#idoutput {
+	position: absolute;
+	width: 1920px;
+	height: 1083px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+#output_backdrop {
+	fill: transparent;
+}
+.output_backdrop {
+	position: absolute;
+	overflow: visible;
+	width: 1920px;
+	height: 1083px;
+	left: 0px;
+	top: 0px;
+}
+#output_header {
+	left: 874px;
+	top: 64px;
+	position: absolute;
+	overflow: visible;
+	width: 174px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 60px;
+	color: rgba(0,0,0,1);
+}
+#input {
+	mix-blend-mode: normal;
+	position: absolute;
+	width: 1920px;
+	height: 1374px;
+	left: 0px;
+	top: 0px;
+	overflow: hidden;
+}
+#idinput {
+	position: absolute;
+	width: 1926px;
+	height: 1374px;
+	left: 0px;
+	top: -4px;
+	overflow: visible;
+}
+#Input_backdrop {
+	fill: rgba(0,0,0,1);
+}
+.Input_backdrop {
+	position: absolute;
+	overflow: visible;
+	width: 1926px;
+	height: 1374px;
+	left: 0px;
+	top: 0px;
+}
+#input_header {
+	left: 958px;
+	top: 69px;
+	position: absolute;
+	overflow: visible;
+	width: 135px;
+	white-space: nowrap;
+	text-align: center;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 60px;
+	color: rgba(255,255,255,1);
+}
+#Hey_there_ {
+	left: 818px;
+	top: 506px;
+	position: absolute;
+	overflow: visible;
+	width: 285px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 60px;
+	color: rgba(0,0,0,1);
+}
+#nav {
+	position: fixed;
+	width: 1920px;
+	height: 68px;
+	left: 0px;
+	top: 0px;
+	overflow: hidden;
+}
+#nav_r {
+	position: absolute;
+	width: 1920px;
+	height: 68px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+#nav_s {
+	fill: rgba(0,0,0,1);
+}
+.nav_s {
+	position: absolute;
+	overflow: visible;
+	width: 1920px;
+	height: 68px;
+	left: 0px;
+	top: 0px;
+}
+#idname {
+	left: 70px;
+	top: 15px;
+	position: absolute;
+	overflow: visible;
+	width: 310px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 32px;
+	color: rgba(255,255,255,1);
+}
+#idinput_button {
+	left: 1607px;
+	top: 15px;
+	position: absolute;
+	overflow: visible;
+	width: 73px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 32px;
+	color: rgba(255,255,255,1);
+}
+#idoutput_Button {
+	left: 1752px;
+	top: 15px;
+	position: absolute;
+	overflow: visible;
+	width: 97px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 32px;
+	color: rgba(255,255,255,1);
+}

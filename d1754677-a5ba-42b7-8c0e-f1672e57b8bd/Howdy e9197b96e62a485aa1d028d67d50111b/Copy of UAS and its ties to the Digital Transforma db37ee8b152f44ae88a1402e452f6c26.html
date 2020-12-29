@@ -1,0 +1,629 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Copy of UAS and its ties to the Digital Transformation</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="db37ee8b-152f-44ae-88a1-402e452f6c26" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🌋</span></div><h1 class="page-title">Copy of UAS and its ties to the Digital Transformation</h1></header><div class="page-body"><p id="f7b694d8-8779-47da-9865-74af2422245a" class="">
+</p><h3 id="bc3ebd5e-4957-46e4-8772-59f10962fcab" class=""><em>Introduction</em></h3><p id="5d488ef4-cded-484f-8502-c5149b26e909" class="">This exercise was to expand the knowledge of how UAS ties into the IOT. Interestingly, the two go hand in hand; there&#x27;s a large push for tying everyday technology into tomorrow. This discussion covers the relationship betwen UAS and IOT, Cloud Computing, Big Data, and Artificial Intelligence.</p><p id="0b508503-dfda-4625-97b3-dbdb9de80a3c" class="">
+</p><h3 id="15886a10-2948-4644-905a-dd29fed4ca0e" class=""><em>Discussion</em></h3><p id="d1cdb766-bbf8-4dce-b560-73360bbd40fc" class="">How UAS relates to the IoT</p><ul id="c974a52c-a129-4f07-911b-9e5b3e6371f1" class="bulleted-list"><li>https://arxiv.org/pdf/1808.08006.pdf</li></ul><p id="cab694f8-1ea3-4007-bc6b-d87e1060e0d1" class="">UCLA states it seems as if UAVs are a hot topic when it comes to increasing cellular coverage for 5g. This idea really strikes me as cool because it’s suggesting UAV are used as nodes that increase wifi range/offer wifi by using what this article referenced as “3GPP”. After a cursory Google search, I stumbled upon this Qualcomm article breaking it down - it’s basically a technical specification organization for cellular, or that’s the gist I got from it. Here’s the Wikipedia, too. Back on topic, in the UCLA article, they mention a lot about studying different methods of what bringing cellular networks across the world from focusing on small-scale operations alongside large-scale operations (which is the focus of the study in the paper). Just a bit of rambling, but I wonder if one day it’ll work just how AM radio could technically be bounced across the world thanks to the ionosphere.</p><ul id="e8a988de-3dfd-4bad-85c1-df65f35d7e60" class="bulleted-list"><li>https://www.insight.com/en_US/content-and-resources/case-studies/increasing-railroad-maintenance-productivity-with-the-iot-and-azure.html#</li></ul><p id="a9da653d-b8ab-4f99-927c-ae21edbb8e96" class="">This was pretty cool. The idea of using UAS in this method would be recognizing and acting on what Insight dubs “edge processing”. I wasn’t sure how it works - their description is nonexistent - this Skyynet article seems to have a solid explanation for what it is. Essentially, it sounds like it’s not edge computing, as the IoT device will process some aggregated data by itself, and produce a result, as Skyynet put it, “two steps removed from the raw data itself”. So, the way I’m interpreting the Insight article is something along the lines of everything will be locally computed until the IoT device (UAV in this instance) detects something wrong with a railroad, upon which it will then send the information to the appropriate party to be dealt with. Neat.</p><ul id="e44e6140-3cf2-4117-9b68-63d750eae6c0" class="bulleted-list"><li>https://www.sciencedirect.com/science/article/pii/S2405959516301096</li></ul><ul id="64e360af-e5ed-4164-b462-0e2da3354fbe" class="bulleted-list"><li>https://www.smartcitiesworld.net/news/news/iot-drone-aims-to-protect-the-skies-2631</li></ul><p id="7eba6a30-2085-466f-824e-0cf15fba9e87" class="">Optimization’s the name of this game. IOT are being used to help UAV optimize the flying path based on sensors and real-time data. The real-world application for this is undoubtedly vast, and it seems as if it can be updated on the fly, as well. The paper talks of using a “Multi-Layer Information” map to gather data of the UAV surroundings based on complex functions that frankly go over my head. Along with that, the paper focuses on the energy expenditure of a flight from three primary angles: sensing, flying, and communicating. My explanation isn’t doing the paper justice, but overall, the goal was to make flight more efficient timewise and energy wise. After about seven iterations, it became significantly more efficient. I wonder if this will have any applications in the real world.</p><p id="a80c829b-c972-4371-8b79-918b0649c1c3" class="">Vodafone apparently made a drone that acts as ATC and tracks smaller drones that may pose threat to airports. This is an interesting spinoff issue that I suppose I hadn’t really considered, but it’s definitely a worthwhile investment should it ever be needed. The general idea behind this is to make sure that all the smaller drones flying near the airport aren’t posing a threat via the UAS communicating over IoT via what Vodafone dubbed “RBS” - Radio Positioning System - with 4G and a SIM. Drone TSA, essentially?</p><p id="d72ce305-4a51-4731-bf0c-4cfc3bb708b1" class="">UAS Relationship with Cloud Computing with a brief summary of the articles</p><p id="b2d9a49b-d48d-421f-811a-6cfd64f53778" class="">“Cloud Computing Drone” was my search term for all four - I scrolled through the Google pages to find these.</p><ul id="c4d2269f-4881-42ff-8573-7d07b2aad65b" class="bulleted-list"><li>https://www.unmannedsystemstechnology.com/2020/06/new-integrated-cloud-based-drone-management-software-launched/</li></ul><ul id="24957b95-a07d-475d-a84d-d20d70cba0e4" class="bulleted-list"><li>https://www.aquilinedrones.com/technology/</li></ul><ul id="70523500-8135-41e8-a7d6-ad9a33fffe8b" class="bulleted-list"><li>https://www.smartcitiesworld.net/news/news/drone-collected-data-goes-live-in-the-cloud-1592</li></ul><ul id="4652fdda-9612-4782-82af-5846852c573a" class="bulleted-list"><li>https://www.prnewswire.com/il/news-releases/duke-robotics-presents-tikad-combat-drone-equipped-with-innovative-stabilization-technology-301101008.html</li></ul><ul id="35624cf9-eedc-402f-934f-6257dc377b44" class="bulleted-list"><li>https://hackernoon.com/how-drones-are-transforming-big-data-analytics-gszq30tr</li></ul><ul id="16441e1c-04ed-4234-b838-de602d288e05" class="bulleted-list"><li>https://drone.cioreview.com/cxoinsight/drones-drive-big-data-nid-6021-cid-204.html</li></ul><ul id="ab81a28a-0b12-4547-99ee-cbc3885c57ce" class="bulleted-list"><li>https://www.techrepublic.com/article/why-it-needs-to-factor-drones-into-its-big-data-plans/</li></ul><ul id="b461f3a4-250e-49eb-a190-6b0a0151509b" class="bulleted-list"><li>https://nocamels.com/2019/11/datumate-construction-drone-mapping-data/</li></ul><ul id="479c9fca-be57-4e79-b361-d198402d7664" class="bulleted-list"><li>https://www.lockheedmartin.com/en-us/news/events/ai-innovation-challenge.html</li></ul><ul id="aa28bf2d-8273-4f91-8a8d-9ae7c2d94dd9" class="bulleted-list"><li>https://www.dronevolt.com/en/engineering-consulting/artificial-intelligence-applications-for-uav/</li></ul><ul id="a467b186-c977-4bba-b1fb-beb8c15f7777" class="bulleted-list"><li>https://delair.aero/</li></ul><ul id="d6462b1b-47a0-418e-8d38-1e8c6bf35d70" class="bulleted-list"><li>https://www.internationalairportreview.com/article/76948/drones-artificial-intelligence-together/</li></ul><p id="eb8dcc78-e447-4135-8673-bcb9801a46df" class="">The first one talked about cloud-based computing in terms of fleet management and flight data. According to UST, one can use their cloud-computing software to estimate fleet performance, get real-time drone and pilot analytics, syncing drones with LTE, and “ultra-low latency real-time remote flights”. Their big sell is the cloud-based portion - accessible any time, any place. No ties or limitations in terms of accessibility! The second link was to a business website called Aquiline Drones, and apparently they’re already in the cloud computing for drone business. They highlight edge computing, AI, and big data analytics all being accessible and resilient (?) within their cloud computing mission control framework. Cloud computability, also according to AD, allows scalability and configuration for third-party developers. They seem to highlight civil avionics as being one of the big reasons to work with cloud computing. Here’s their infographic for why their company is a good choice - I think it highlights a lot of good uses for cloud computing and UAS in general. The third link from Smart Cities World talks about how cloud computing is used by UAS to inspect wind turbines, and it actually quotes annual infrastructure monitoring costs at about 2b Euros. Being able to cut that cost would definitely be beneficial, and Smart Cities World mentions Cloud4Drones as the method to do it. The final article only briefly touches on cloud computing, saying the services related to it will help project the military drone market to $21.76b by 2026. That’s staggering, and it’s only one niche of the business.</p><p id="8dd11f87-1aa3-486f-ad2f-9bef8d95446d" class="">UAS Relationship with Big Data with a brief summary of the articles</p><p id="f8e1bda8-4d1f-4b16-81bc-9a0bb848dc79" class="">“Big Data Drone” was my search term for all four - I scrolled through the Google pages to find these.</p><p id="09fb7d5f-638d-495d-b4f5-3ce351a217a5" class="">The first website, Hackernoon, talks about how drones are used for data collection, stating they capture, store, and transmit data for industries such as real estate, agriculture, and how they help in GIS. There are a lot of advantages to transitioning to something agile and small for aerial imagery, and Big Data helps make it accessible to all, even if archiving a ton of data seems to be an issue for UAS. The second article talks about a shift between ages due to UAS and Big Data. It brings up how there are radical changes to what the industry (or at the very least, the writer’s profession) focuses on designing or implementing in terms of developing. The third article touches on what makes drones valuable in IT practices. Tech Republic goes on to say that while it’s in a gray area of figuring out the rules and regulations, it’s widely used because it’s so widely applicable, and the capabilities for data aggregation isn’t limited to simply one industry - it spans, as Tech Republic mentions, across many industries, including Construction, Agriculture, and the Traffic industry (e.g. highway patrols and geospatial locations to capture accident evidence and whatnot). The final article focuses on how Big Data and UAS are impacting construction. In Israel, they’re already implementing uses of Big Data and UAS by combining drones and computer vision technology (and cloud computing and big data) to help streamline engineering procedures used in three sub-niches of the construction industry.</p><p id="37ad5f84-b5e8-4aad-9cb3-73ef935f63a8" class="">UAS Relationship with Artificial Intelligence with a brief summary of the articles</p><p id="5afe7e54-e754-49b8-bea0-ba0e814defff" class="">“AI Drone” was my search term for all four - I scrolled through the Google pages to find these.</p><p id="8e6c923a-9cea-4cc8-be78-fef357b1f63f" class="">Some big names are interested in learning about the application and development of AI and drones. Lockheed, from the first linked article, is focusing on pushing the boundaries of Ai and autonomous flight by hosting a competition to close the gap between AI and humans. Lockheed knows there’s a future for AI-powered drones, and it’s paying accordingly for the research to present itself. The second website, DroneVolt, lists some noteworthy applications of AI-powered UAS applications, such as object detection, entity tracking, crowd counting, thermal detection, and so on. It highlights how with an NVIDIA graphics card and an intelligent camera, the AI can work onboard or from the cloud in numerous ways. The third website sells Ai drone products with a focus on applications in agriculture and forestry by capturing data, managing it, and analyzing it by edge processing (or so I assume)! The final article talks about how there are countless applications for AI systems with drones. They talk about how one can get fantastic views of landscapes, including during surveillance and mapping missions, and how the AI technology can be applied to surveying far more than simply construction sites autonomously - and paired with cloud computing and big data, there are a ton of avenues opened up that may take a drone an hour what it may take a human a day in terms of discovering issues or intaking data. Regardless, it’s all cool stuff.</p><p id="df83c1c6-8f68-44bf-b6e0-3d84748949b0" class="">“Cloud Computing Drone” was my search term for all four - I scrolled through the Google pages to find these.</p><p id="8538e257-8796-448a-be0b-e431f82fc339" class="">The first one talked about cloud-based computing in terms of fleet management and flight data. According to UST, one can use their cloud-computing software to estimate fleet performance, get real-time drone and pilot analytics, syncing drones with LTE, and “ultra-low latency real-time remote flights”. Their big sell is the cloud-based portion - accessible any time, any place. No ties or limitations in terms of accessibility! The second link was to a business website called Aquiline Drones, and apparently they’re already in the cloud computing for drone business. They highlight edge computing, AI, and big data analytics all being accessible and resilient (?) within their cloud computing mission control framework. Cloud computability, also according to AD, allows scalability and configuration for third-party developers. They seem to highlight civil avionics as being one of the big reasons to work with cloud computing. Here’s their infographic for why their company is a good choice - I think it highlights a lot of good uses for cloud computing and UAS in general. The third link from Smart Cities World talks about how cloud computing is used by UAS to inspect wind turbines, and it actually quotes annual infrastructure monitoring costs at about 2b Euros. Being able to cut that cost would definitely be beneficial, and Smart Cities World mentions Cloud4Drones as the method to do it. The final article only briefly touches on cloud computing, saying the services related to it will help project the military drone market to $21.76b by 2026. That’s staggering, and it’s only one niche of the business.</p><p id="f95fa4ee-6268-4c48-9436-4a3befd060c4" class="">UAS Relationship with Big Data with a brief summary of the articles</p><p id="5d89c123-cc92-46f3-a545-eabb44fb9eb2" class="">“Big Data Drone” was my search term for all four - I scrolled through the Google pages to find these.</p><p id="f2da3b09-40cd-4470-a456-4aea6bebd455" class="">The first website, Hackernoon, talks about how drones are used for data collection, stating they capture, store, and transmit data for industries such as real estate, agriculture, and how they help in GIS. There are a lot of advantages to transitioning to something agile and small for aerial imagery, and Big Data helps make it accessible to all, even if archiving a ton of data seems to be an issue for UAS. The second article talks about a shift between ages due to UAS and Big Data. It brings up how there are radical changes to what the industry (or at the very least, the writer’s profession) focuses on designing or implementing in terms of developing. The third article touches on what makes drones valuable in IT practices. Tech Republic goes on to say that while it’s in a gray area of figuring out the rules and regulations, it’s widely used because it’s so widely applicable, and the capabilities for data aggregation isn’t limited to simply one industry - it spans, as Tech Republic mentions, across many industries, including Construction, Agriculture, and the Traffic industry (e.g. highway patrols and geospatial locations to capture accident evidence and whatnot). The final article focuses on how Big Data and UAS are impacting construction. In Israel, they’re already implementing uses of Big Data and UAS by combining drones and computer vision technology (and cloud computing and big data) to help streamline engineering procedures used in three sub-niches of the construction industry.</p><p id="aa6840ee-046f-490c-8172-c4d57231b385" class="">UAS Relationship with Artificial Intelligence with a brief summary of the articles</p><p id="91d8d6e1-15cd-4fdc-9b3b-be7d562cc606" class="">“AI Drone” was my search term for all four - I scrolled through the Google pages to find these.</p><p id="df43a423-8864-4bc9-849a-0d870c8cef48" class="">Some big names are interested in learning about the application and development of AI and drones. Lockheed, from the first linked article, is focusing on pushing the boundaries of Ai and autonomous flight by hosting a competition to close the gap between AI and humans. Lockheed knows there’s a future for AI-powered drones, and it’s paying accordingly for the research to present itself. The second website, DroneVolt, lists some noteworthy applications of AI-powered UAS applications, such as object detection, entity tracking, crowd counting, thermal detection, and so on. It highlights how with an NVIDIA graphics card and an intelligent camera, the AI can work onboard or from the cloud in numerous ways. The third website sells Ai drone products with a focus on applications in agriculture and forestry by capturing data, managing it, and analyzing it by edge processing (or so I assume)! The final article talks about how there are countless applications for AI systems with drones. They talk about how one can get fantastic views of landscapes, including during surveillance and mapping missions, and how the AI technology can be applied to surveying far more than simply construction sites autonomously - and paired with cloud computing and big data, there are a ton of avenues opened up that may take a drone an hour what it may take a human a day in terms of discovering issues or intaking data. Regardless, it’s all cool stuff.</p></div></article></body></html>
